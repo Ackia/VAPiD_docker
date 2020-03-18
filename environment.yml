@@ -1,0 +1,17 @@
+name: VAPiD
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - samtools
+  - bowtie2
+  - fastqc
+  - fastp
+  - multiqc
+  - quast
+  - blast
+  - numpy
+  - biopython
+  - mafft
+  - python
+  - tbl2asn
