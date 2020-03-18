@@ -1,12 +1,16 @@
-FROM continuumio/miniconda:latest
+FROM continuumio/miniconda3:4.8.2
 
 RUN apt-get update --fix-missing && apt install -yq make gcc g++ gfortran git
 
 COPY environment.yml /
 
+RUN pip install -U pip
+
+RUN pip install numpy biopython
+
 RUN conda env create -f environment.yml
-RUN echo "source activate Filter_Human" > ~/.bashrc
-ENV PATH /opt/conda/envs/Filter_Human/bin:$PATH
+RUN echo "source activate VAPiD" > ~/.bashrc
+ENV PATH /opt/conda/envs/VAPiD/bin:$PATH
 
 RUN git clone https://github.com/rcs333/VAPiD.git
 
